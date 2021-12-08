@@ -24,11 +24,14 @@ const pizza = {
             flour *= 4
         message = `You will need to purchase ${flour} cups of ${pizza.topping} for large pizza`
         document.querySelector('#feedback').textContent = message
-        }
+        } if (pizza.crust === 'thin') {
+            flour *= 2
+            message = `You will need to purchase ${flour} cups of flour and 1lb of ${pizza.topping} for a ${pizza.crust} pizza.`
+            document.querySelector('#feedback').textContent = message
 
     }
 
-}
+} }
 
 document.querySelector('#thin').addEventListener('click', () => pizza.crust = 'thin')
 
